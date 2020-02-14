@@ -1,5 +1,5 @@
 {% set name = "diffsims" %}
-{% set version = "0.1.5" %}
+{% set version = "0.2.2" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 28826ee05f91703afbd75f781e57c1e852bc572d4dfe6ca45bd6e710f3c3e084
+  sha256: e472243951038c1b3afdabfd11212dc54d30992593bf95633deac02f4e6e062b
 
 build:
   number: 0
@@ -22,10 +22,12 @@ requirements:
     - python >=3
     - scipy >=0.15
     - numpy >=1.10
-    - matplotlib >=3.1.1
+    - matplotlib-base >=3.1.1
     - tqdm >=0.4.9
     - transforms3d
     - diffpy.structure >=3.0.0
+    - psutil 
+    - numba
 
 test:
   requires:
