@@ -5,7 +5,7 @@ Home: https://github.com/pyxem/diffsims
 
 Package license: GPL-3.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: An open-source Python library for diffraction simulations
 
