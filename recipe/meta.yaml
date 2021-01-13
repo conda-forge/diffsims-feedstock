@@ -1,5 +1,5 @@
 {% set name = "diffsims" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c96a29c6b8a70de3e293e297731a7ba7dd4cd58407818c0cab49b06eebe9ca10
+  sha256: 3c3242151924b597538876edfb99fc13f88ddf0fd32f96629e9ad0916552ca25
 
 build:
   number: 0
@@ -44,7 +44,7 @@ test:
 
 about:
   home: https://github.com/pyxem/diffsims
-  license: GPL-3.0
+  license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE
   summary: An open-source Python library for diffraction simulations
