@@ -20,9 +20,9 @@ requirements:
     - python >=3
   run:
     - python >=3
-    - scipy >=0.15
+    - scipy >=1.0
     - numpy >=1.17
-    - matplotlib-base >=3.1.1
+    - matplotlib-base >=3.3
     - tqdm >=4.9
     - transforms3d
     - diffpy.structure >=3.0.0
@@ -48,7 +48,7 @@ about:
   license_family: GPL
   license_file: LICENSE
   summary: An open-source Python library for diffraction simulations
-  doc_url: www.pyxem.org
+  doc_url: https://diffsims.readthedocs.io/en/stable
 
 extra:
   recipe-maintainers:
