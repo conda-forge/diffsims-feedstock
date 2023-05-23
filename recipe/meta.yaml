@@ -1,5 +1,5 @@
 {% set name = "diffsims" %}
-{% set version = "0.5.1" %}
+{% set version = "0.5.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 005b629711ff4a6c8b29011acd7bf2e21ab46b1fe2ebdce222e4e67847abb2ed
+  sha256: 29f0facf95c88c3804479dc712b62860101b304c3e6180a74db09580129d1701
 
 build:
   number: 0
@@ -17,9 +17,9 @@ build:
 requirements:
   host:
     - pip
-    - python >=3
+    - python >=3.6
   run:
-    - python >=3
+    - python >=3.6
     - scipy >=1.0
     - numpy >=1.17
     - matplotlib-base >=3.3
@@ -32,22 +32,28 @@ requirements:
 
 test:
   requires:
+    - pip
     - pytest
   imports:
     - diffsims
-    - diffsims.utils
+    - diffsims.crystallography
     - diffsims.generators
-    - diffsims.sims
     - diffsims.libraries
+    - diffsims.sims
+    - diffsims.utils
   commands:
+    - pip check
+    - export MPLBACKEND=agg  # [unix]
+    - set MPLBACKEND=agg  # [win]
     - pytest --pyargs diffsims
 
 about:
-  home: https://github.com/pyxem/diffsims
+  home: https://diffsims.readthedocs.io
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE
   summary: An open-source Python library for diffraction simulations
+  dev_url: https://github.com/pyxem/diffsims
   doc_url: https://diffsims.readthedocs.io/en/stable
 
 extra:

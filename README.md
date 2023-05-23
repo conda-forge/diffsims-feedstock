@@ -1,15 +1,15 @@
-About diffsims
-==============
+About diffsims-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/diffsims-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/pyxem/diffsims
 
 Package license: GPL-3.0-or-later
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/diffsims-feedstock/blob/main/LICENSE.txt)
-
 Summary: An open-source Python library for diffraction simulations
 
-Documentation: www.pyxem.org
+Documentation: https://diffsims.readthedocs.io/en/stable
 
 Current build status
 ====================
