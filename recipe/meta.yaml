@@ -43,8 +43,8 @@ test:
     - diffsims.utils
   commands:
     - pip check
-    - export MPLBACKEND=agg # [unix]
-    - set MPLBACKEND=agg # [win]
+    - export MPLBACKEND=agg  # [unix]
+    - set MPLBACKEND=agg  # [win]
     - pytest --pyargs diffsims
 
 about:
