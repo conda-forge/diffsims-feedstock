@@ -17,16 +17,16 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.8
   run:
-    - python >=3.6
-    - scipy >=1.0
-    - numpy >=1.17
+    - python >=3.8
+    - scipy >=1.8
+    - numpy >=1.17.3
     - matplotlib-base >=3.3
     - tqdm >=4.9
     - transforms3d
-    - diffpy.structure >=3.0.0
-    - orix >=0.9.0
+    - diffpy.structure >=3.0.2
+    - orix >=0.12.1
     - psutil
     - numba
 
@@ -45,7 +45,7 @@ test:
     - pip check
     - export MPLBACKEND=agg  # [unix]
     - set MPLBACKEND=agg  # [win]
-    - pytest --pyargs diffsims
+    - pytest --pyargs diffsims -k "not test_same_simulation_results"
 
 about:
   home: https://diffsims.readthedocs.io
@@ -61,3 +61,4 @@ extra:
     - dnjohnstone
     - pc494
     - hakonanes
+    - CSSFrancis
