@@ -1,5 +1,5 @@
 {% set name = "diffsims" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ce0db1bcda5614b40c3faf27f17581d35c2745dc093d4ee21c773fe48efea1df
+  sha256: 0fd480ec81f8aaaffde29a5b2e8ab3205b0f910b9e6130680186d96256cbfe73
 
 build:
   number: 0
