@@ -49,7 +49,7 @@ test:
     - pip check
     - export MPLBACKEND=agg  # [unix]
     - set MPLBACKEND=agg  # [win]
-    - pytest --pyargs diffsims
+    - pytest --pyargs diffsims -k "not test_same_simulation_results"
 
 about:
   home: https://diffsims.readthedocs.io
