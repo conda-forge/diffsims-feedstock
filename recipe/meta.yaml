@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 0fd480ec81f8aaaffde29a5b2e8ab3205b0f910b9e6130680186d96256cbfe73
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
   run:
     - diffpy.structure >=3.0.2
     - matplotlib-base >=3.3
-    - python >=3.8
+    - python >={{ python_min }}
     - numba
     - numpy >=1.17.3
     - orix-base
@@ -35,6 +35,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
   imports:
     - diffsims
     - diffsims.crystallography
