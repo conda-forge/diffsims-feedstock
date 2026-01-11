@@ -10,19 +10,19 @@ source:
   sha256: 8dc8cbb6aa5f4a6f0c40cc2c52d33dd486136227c328714b6635db7746f1729a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
   run:
     - diffpy.structure >=3.0.2
     - matplotlib-base >=3.3
-    - python >=3.8
+    - python >={{ python_min }}
     - numba
     - numpy >=1.17.3
     - orix-base
@@ -35,6 +35,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
   imports:
     - diffsims
     - diffsims.crystallography
@@ -49,7 +50,9 @@ test:
     - pip check
     - export MPLBACKEND=agg  # [unix]
     - set MPLBACKEND=agg  # [win]
-    - pytest --pyargs diffsims -k "not test_same_simulation_results"
+    # TODO: Remove skip of equivalent (hkl) test once
+    # https://github.com/pyxem/diffsims/issues/248 is fixed
+    - pytest --pyargs diffsims -k "not test_same_simulation_results and not test_get_equivalent_hkl"
 
 about:
   home: https://diffsims.readthedocs.io
